@@ -77,6 +77,38 @@ textarea:not([rows]) {
 /* End of Bell's Reset */
 
 /* Begin My CSS */
-body {
-    
+.thumbnail-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px; /* Adds space between the image and the text */
+    padding: 20px;
+    max-width: 1200px; /* Limit the width to prevent the content from stretching too far */
+    margin: 0 auto; /* Center the container */
+}
+
+.image-container {
+    flex: 1;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Adjust the size of the image as needed */
+}
+
+.poem-text-meaning {
+    flex: 2; /* Make the text container take up more space compared to the image */
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+    .thumbnail-container {
+        flex-direction: column; /* Stack the image and text on top of each other for smaller screens */
+    }
+
+    .poem-text-meaning {
+        margin-top: 20px;
+    }
 }
