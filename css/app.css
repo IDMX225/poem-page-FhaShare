@@ -77,38 +77,251 @@ textarea:not([rows]) {
 /* End of Bell's Reset */
 
 /* Begin My CSS */
-.thumbnail-container {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 20px; /* Adds space between the image and the text */
-    padding: 20px;
-    max-width: 1200px; /* Limit the width to prevent the content from stretching too far */
-    margin: 0 auto; /* Center the container */
+h1 {
+    font-family: "Black Ops One";
+    font-size: 3em;
+    margin-top: 20px;
 }
 
-.image-container {
-    flex: 1;
+h2 {
+    font-family: "Charm";
+    font-size: 2em;
+    line-height: 0.5;
 }
 
-.image-container img {
+p {
+    font-family: "Noto Sans Thai";
+    font-size: 1.5em;
+    line-height: 1.8;
+}
+
+.poem-text-thai-pronunciation p {
+    font-family: "Noto Sans Thai";
+    font-size: 1.5em;
+    line-height: 1.2;
+}
+
+.poem-text-translated p {
+    font-family: "Charm";
+    font-size: 1.5em;
+    line-height: 1.2;
+    color: #6c251c;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100vw;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+}
+
+figure {
+    position: relative;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    height: auto;
-    max-width: 300px; /* Adjust the size of the image as needed */
+    height: 100%;
 }
 
-.poem-text-meaning {
-    flex: 2; /* Make the text container take up more space compared to the image */
-    font-size: 1rem;
-    line-height: 1.6;
+figcaption {
+    font-size: 1em;
+    text-align: left;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    background-color: #3b1e1a; 
+    color: #fff;
+    padding: 5px 10px;
+    line-height: 1.5;
 }
 
-@media screen and (max-width: 768px) {
-    .thumbnail-container {
-        flex-direction: column; /* Stack the image and text on top of each other for smaller screens */
+/* Dropcaps */
+.poem-text-thai-pronunciation p::first-letter {
+    color: #6c251c;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.poem-text-translated p::first-letter {
+    color: black;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+footer {
+    text-align: center;
+    background-color: black;
+    color: #fff;
+}
+
+/* Large screens */
+@media screen and (min-width: 1025px) {
+    .thumbnail-container-large-screen {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: black;
+        color: #fff;
+        margin: 0;
+        padding: 0;
+    }
+
+    .thumbnail-container-large-screen p::first-letter {
+        color: white;
+        font-size: 2em;
+        font-weight: 800;
+    }
+
+    .thumbnail-container-large-screen p {
+        margin-top: 50px;
+    }
+
+    .thumbnail-container-large-screen img {
+        width: 100%;
+        height: 95%;
+        object-fit: cover;
+    }
+
+    .thumbnail-container-large-screen figure {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 
     .poem-text-meaning {
-        margin-top: 20px;
+        padding:  50px;
+    }
+
+    .poem-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 150px;
+        padding: 50px 150px;
+    }
+
+    .poem-container .poem-text-thai-pronunciation {
+        padding-right: 150px;
+        border-right: 2px solid #3b1e1a;
+    }
+
+    .thumbnail-container {
+        display: none;
+    }
+}
+
+/* Tablet screens */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .thumbnail-container header {
+        text-align: center;
+        padding: 50px;
+        background-color: #3b1e1a;
+        color: #fff;
+    }
+
+    figcaption {
+        text-align: center;
+    }
+
+    .thumbnail-container p::first-letter {
+        color: black;
+        font-family: "Black Ops One";
+        font-size: 2em;
+        font-weight: 800;
+    }
+
+    .thumbnail-container p {
+        margin: 50px 150px;
+        line-height: 1.5;
+        text-indent: 2em;
+    }
+    
+    .poem-container {
+        display: grid;
+        justify-content: center;
+        gap: 50px;
+        margin: 50px 150px;
+    }
+
+    .thumbnail-container-large-screen {
+        display: none; 
+    }
+
+    footer {
+        text-align: center;
+        background-color: black;
+        color: #fff;
+        font-size: 0.5em;
+    }
+}
+
+/* Mobile screens */
+@media screen and (max-width: 767px) {
+    h1 {
+        font-family: "Black Ops One";
+        font-size: 1.5em;
+    }
+    
+    h2 {
+        font-family: "Charm";
+        font-size: 1em;
+        line-height: 0.5;
+    }
+
+    .thumbnail-container header {
+        text-align: left;
+        padding: 20px;
+        background-color: #3b1e1a;
+        color: #fff;
+        padding-bottom: 20px;
+    }
+
+    figcaption {
+        text-align: center;
+    }
+
+    .thumbnail-container p::first-letter {
+        color: black;
+        font-family: "Black Ops One";
+        font-size: 2em;
+        font-weight: 400;
+    }
+
+    .thumbnail-container p {
+        margin: 20px 40px;
+        font-size: 0.8em;
+        line-height: 1.5;
+        text-indent: 2em;
+    }
+    
+    .poem-container {
+        display: grid;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .poem-container p {
+        margin: 10px 10px;
+        font-size: 0.8em;
+        line-height: 1.5;
+    }
+
+    .thumbnail-container-large-screen {
+        display: none; 
+    }
+
+    .thumbnail-container-large-screen {
+        display: none; 
+    }
+
+    footer {
+        text-align: center;
+        background-color: black;
+        color: #fff;
+        font-size: 0.5em;
     }
 }
